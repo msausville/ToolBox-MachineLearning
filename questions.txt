@@ -1,0 +1,17 @@
+1) What is the general trend in the curve?
+  It is upward! The more training data you give it, the more accurate it becomes.
+2) Are there parts of the curve that appear to be noisier than others? Why?
+  The beginning of the graph looks a bit rougher than the middle and end (starting
+  from about 50% of the data on). I assume this is because after this point there
+  is more training data than testing data and you're more likely to get an accurate
+  result.
+3) How many trials do you need to get a smooth curve?
+  I don't think we can get a smoother curve with more trials. We're up to 100 trials
+  in increments of 1 now and it's still very jagged.
+4) Try different values for C (by changing LogisticRegression(C=10** -10)). What happens?
+If you want to know why this happens, see this Wikipedia page as well as the documentation
+for LogisticRegression in scikit-learn.
+  Um. So changing the C made it 60% accurate at 12ish percent training data
+  before it spikes down to 10 perfect accurate. When I made C larger the curve
+  became less jagged but still very bumpy. Reading about Tikhonov regularization
+  didn't really make it clearer for me.
